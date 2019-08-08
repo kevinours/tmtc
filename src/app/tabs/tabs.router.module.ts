@@ -38,15 +38,45 @@ const routes: Routes = [
         ]
       },
       {
+        path: 'home',
+        children: [
+          {
+            path: '',
+            loadChildren: () =>
+              import('../pages/home/home.module').then(m => m.HomePageModule)
+          }
+        ]
+      },
+      {
+        path: 'post',
+        children: [
+          {
+            path: '',
+            loadChildren: () =>
+              import('../pages/post/post.module').then(m => m.PostPageModule)
+          }
+        ]
+      },
+      {
+        path: 'developpers',
+        children: [
+          {
+            path: '',
+            loadChildren: () =>
+              import('../pages/developers/developers.module').then(m => m.DevelopersPageModule)
+          }
+        ]
+      },
+      {
         path: '',
-        redirectTo: '/tabs/tab1',
+        redirectTo: '/tabs/home',
         pathMatch: 'full'
       }
     ]
   },
   {
     path: '',
-    redirectTo: '/tabs/tab1',
+    redirectTo: '/tabs/home',
     pathMatch: 'full'
   }
 ];

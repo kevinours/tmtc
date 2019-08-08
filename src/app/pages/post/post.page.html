@@ -1,0 +1,34 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title>Post page</ion-title>
+  </ion-toolbar>
+</ion-header>
+ 
+<ion-content padding>
+ 
+  <!-- <ion-segment [(ngModel)]="selectedView">
+    <ion-segment-button value="devs">
+      <ion-label>Developer</ion-label>
+    </ion-segment-button>
+    <ion-segment-button value="products">
+      <ion-label>Products</ion-label>
+    </ion-segment-button>
+  </ion-segment> -->
+ 
+
+      <ion-item>
+        <ion-label position="stacked">What's your name?</ion-label>
+        <ion-input [(ngModel)]="developer.name" placeholder="Name"></ion-input>
+      </ion-item>
+      <!-- <ion-item>
+        <ion-label position="stacked">What are your special skills (comma separated)?</ion-label>
+        <ion-input [(ngModel)]="developer.skills" placeholder="Special Skills"></ion-input>
+      </ion-item> -->
+      <ion-item>
+        <ion-label position="stacked">Your text</ion-label>
+        <!-- <ion-input  placeholder="https://..."></ion-input> -->
+        <ion-textarea [(ngModel)]="developer.skills" placeholder="Enter more information here..."></ion-textarea>
+      </ion-item>
+      <ion-button expand="block" (click)="addDeveloper()">Add </ion-button>
+ 
+</ion-content>

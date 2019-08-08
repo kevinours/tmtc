@@ -1,0 +1,43 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>home</ion-title>
+  </ion-toolbar>
+  <!-- <ion-text>rand - last - best - worst</ion-text> -->
+  <ion-row>
+    <ion-col>
+      <ion-button (click)="rand()">Rand</ion-button>   
+    </ion-col> 
+    <ion-col>
+      <ion-button (click)="last()">Last</ion-button>   
+    </ion-col> 
+    <ion-col>
+      <ion-button (click)="best()">Best</ion-button>   
+    </ion-col> 
+    <ion-col>
+      <ion-button (click)="worst()">Worst</ion-button>   
+    </ion-col> 
+  </ion-row>
+
+
+</ion-header>
+
+
+<ion-content>
+ 
+  <ion-list>
+    <ion-item  *ngFor="let dev of developers" >
+      <ion-text button [routerLink]="['/', 'developers', dev.id]">
+        <h2>{{ dev.name }} - {{ dev.postDate }}</h2>
+        <p>{{ dev.skills }}</p>
+        <p>score  : {{ dev.score }}</p>
+      </ion-text>
+      <ion-text>
+        <ion-button  expand="block" (click)="dislike(dev.id, dev.score)">-</ion-button>   
+        <ion-button expand="block" (click)="like(dev.id, dev.score)">+</ion-button>
+      </ion-text>
+
+    </ion-item>
+  </ion-list>
+  
+
+</ion-content>
